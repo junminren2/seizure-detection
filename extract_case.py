@@ -55,7 +55,7 @@ def extra_case(exp, num, excel_path, new_dir):
         if len(str(m[i])) == 1:
             m0 = '0' + str(m[i])
         else:
-            m0 = str(h[i])
+            m0 = str(m[i])
 
         dir_path = os.path.join(new_dir, str(d[i]))
         move_dir = os.path.join(dir_path, h0)
