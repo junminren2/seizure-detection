@@ -48,19 +48,19 @@ def extra_case(exp, num, excel_path, new_dir):
         # d = ''.join(str(a) for a in d[i])
         # h = ''.join(str(int(b)) for b in h[i])
         # m = ''.join(str(int(c)) for c in m[i])
-        if len(h[i]) == 1:
-            h = '0' + str(h[i])
+        if len(str(h[i])) == 1:
+            h0 = '0' + str(h[i])
         else:
-            h = str(h[i])
+            h0 = str(h[i])
         if len(str(m[i])) == 1:
-            m = '0' + str(m[i])
+            m0 = '0' + str(m[i])
         else:
-            h = str(h[i])
+            m0 = str(h[i])
 
         dir_path = os.path.join(new_dir, str(d[i]))
-        move_dir = os.path.join(dir_path, h)
-        file_path = os.path.join(move_dir, exp + '_' + num + '_' + d[i] + '_' + h + '_' + m + '.mp4')
-        goal_paths = os.path.join(move_dir, 'extract')
+        move_dir = os.path.join(dir_path, h0)
+        file_path = os.path.join(move_dir, exp + '_' + num + '_' + d[i] + '_' + h0 + '_' + m0 + '.mp4')
+        goal_paths = os.path.join(new_dir, 'extract')
         if not os.path.exists(goal_paths):
             os.makedirs(goal_paths)
         shutil.copy(file_path, goal_paths)
