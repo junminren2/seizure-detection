@@ -1,0 +1,12 @@
+1. 在左下角点搜索
+2.输入pycharm
+3.打开pycharm
+4.点击左侧的config.ini文件
+5.在source_dir后面修改老鼠视频根目录
+6.在expert后面修改实验人员姓名
+7.在subject_name后面修改老鼠编号
+8.在date后面修改测试视频的日期
+9.右键左侧的main.py文件
+10.点击run
+11.在视频根目录下找到result文件夹
+12.点击res_videos看到判断为癫痫的视频
