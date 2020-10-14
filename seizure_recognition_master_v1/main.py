@@ -43,7 +43,8 @@ def workflow(kind_dir, config, pj_dir):
         print('Preprocess video complete')
         print("Preprocess cost {} minutes".format((time.time() - st) / 60))
     if config.getboolean('Pipeline', 'predict'):
-        date = get_path_leaf(kind_dir)
+        # date = get_path_leaf(kind_dir)
+        date  = config.get('Preprocess', 'date')
         test_name = '{}_{}_{}.txt'.format(expert, subject_name, date)
         file_list_path = make_list(test_name, kind_dir)
         file_old = open(file_list_path, 'r', encoding="utf-8")
