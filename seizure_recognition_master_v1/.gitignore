@@ -1,0 +1,10 @@
+*.pth
+.idea/
+~$*
+__pycache__/
+RE.txt
+video_cutter/cut.xlsx
+*.swp
+test.py
+.DS_Store
+*.lprof
