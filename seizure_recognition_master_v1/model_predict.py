@@ -133,6 +133,19 @@ def predict(config, model, file_list_path, pj_dir):
                 elif (pre_label > 5 and pre_control[index - 1] > 2) or pre_label == 0:
                     # if current have 5+ case frames and previous predict label bigger 2
                     acc = 1
+                elif pre_label == 1:
+                    for h in range(10):
+                        print(h)
+                        if (prob_outputs.cpu().data.numpy())[h][1] > 0.85:
+
+                            acc = 0
+                            prob_log.write('name: {}\nprob:\n{}\n'.format(video_name[0], (prob * 100).astype(np.uint8)))
+                            prob_log.flush()
+                            # import ipdb
+                            # ipdb.set_trace()
+                            shutil.copy(linecache.getline(file_list_path, index + 1).strip()[:-3], res_video_dir)
+                elif pre_label == 0:
+                    acc = 1
 
             accuracies.update(acc, inputs.size(0))
             line = "Video[{}]:\t predict = {}\t true = {}\t acc = {}\n".format(i, pre_label,
