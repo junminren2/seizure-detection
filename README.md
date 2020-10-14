@@ -1,1 +1,1 @@
-# seizure-detection
+# seizure-recognition
